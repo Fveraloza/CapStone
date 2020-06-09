@@ -1,0 +1,129 @@
+<style>
+
+    body {
+        font-family: Source Sans Pro, sans-serif;
+        margin: auto;
+    }
+
+    header {
+        background-color: #2d3038;
+        color: white;
+        padding: 2em;
+    }
+
+    *#logotipo {
+        top:0;
+        left:0;
+        width: 15%;
+    }
+
+    .container {
+        max-width: auto;
+        margin: auto;
+    }
+
+    .main {
+        text-align: center;
+    }
+    .service {
+        display: inline-block;
+        border: 1px soild #ccc;
+        padding: 1em;
+        text-align: center;
+        margin: 1em;
+    }
+
+    .service:hover{
+        box-shadow: 5px 5px 5px #ccc;
+    }
+
+    .service .price {
+        color: #777;
+        font-size: 1.5em;
+    }
+
+    .service .time {
+        font-size: 1em;
+        margin: 0.5em 0;
+        color: #2d3038; 
+    }
+
+    .service .condition {
+        font-size: 1em;
+        width: 100%;
+        background-color: white;
+        margin: 0.3em 0;
+    }
+
+    .servive .readmore {
+    border: 1px solid lightblue;
+    width: 100%;
+    background-color: white;
+    font-size: 1em;
+    }
+    
+    .service .readmore:hover {
+    background-color: #ccc;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    h6 {
+        text-align: center;
+    }
+
+    h1 {
+        color: #8ea3b3;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #2d3038;
+        margin: auto;
+        text-align: center;
+        padding: 0.5em;
+    }
+
+    #item-footer {
+        color: white;
+        text-decoration: none;
+    }
+
+</style>
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{% block title %}{% endblock %}</title>
+        
+        <!-- <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" /> -->
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <a href="/"><img id="logotipo" src="images/logo.png"></a>
+                <h1>DIGITALIZE YOUR SPACE</h1>
+                <h2>First online marketplace to promote your realstate, store, restaurant or office</h2>
+            </header>
+            {% block main %}
+            {% endblock %}
+        </div>
+    </body>
+    <footer class="footer-container">
+        <span><a id="item-footer" href="/index">Home | </a></span>
+        <span><a id="item-footer" href="#home">Contact Us | </a></span>
+        <span><a id="item-footer" href="#home">Blog</a></span>
+    </footer>
+</html>
+

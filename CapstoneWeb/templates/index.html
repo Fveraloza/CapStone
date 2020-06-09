@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Realista | Digitalize your space.{% endblock %}
+
+<style>
+
+    body {
+        font-family: Source Sans Pro, sans-serif;
+        margin: auto;
+    }
+
+    header {
+        background-color: #2d3038;
+        color: white;
+        padding: 2em;
+    }
+
+    /*#logotipo {
+        position:fixed;
+        top:0;
+        left:0;
+    }*/
+
+    .container {
+        max-width: auto;
+        margin: auto;
+    }
+
+    .main {
+        text-align: center;
+    }
+    .service {
+        display: inline-block;
+        border: 1px soild #ccc;
+        padding: 1em;
+        text-align: center;
+        margin: 1em;
+    }
+
+    .service:hover{
+        box-shadow: 5px 5px 5px #ccc;
+    }
+
+    .service .price {
+        color: #777;
+        font-size: 1.5em;
+    }
+
+    .service .time {
+        font-size: 1em;
+        margin: 0.5em 0;
+        color: #2d3038; 
+    }
+
+    .service .condition {
+        font-size: 1em;
+        width: 100%;
+        background-color: white;
+        margin: 0.3em 0;
+    }
+
+    .servive .readmore {
+    border: 1px solid lightblue;
+    width: 100%;
+    background-color: white;
+    font-size: 1em;
+    
+    }
+    
+    .service .readmore:hover {
+    background-color: #ccc;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    h6 {
+        text-align: center;
+    }
+
+    h1 {
+        color: #8ea3b3;
+        text-align: center;
+    }
+
+</style>
+
+{% block main %}
+
+<div class="main">
+    <h6>CATALOGUE</h6>
+    <h3>OUR SERVICES</h3>
+    <p>When you know what you want, get in touch with us through the form. Prices without Taxes.</p>
+    <div class="service">
+        <img class="picture" src="images/Matterport.png" alt="author" />
+        <div class="content">
+            <h2 class="name">MATTERPORT VIRTUAL TOUR</h2>
+            <div class="price">From 99,00€</div>
+            <div class="time">5 DAYS</div>
+            <div class="condition">Existing Space</div>
+            <div class="readmore"><a href="/matterport">Read More</a></div>
+        </div>
+    </div>
+    <div class="service">
+        <img class="picture" src="images/3dModeling.png" alt="author" />
+        <div class="content">
+            <h2 class="name">3D MODELING</h2>
+            <div class="price">450,00€</div>
+            <div class="time">12 DAYS</div>
+            <div class="condition">New Space</div>
+            <div class="readmore"><a href="/3d-modeling">Read More</a></div>
+        </div>
+    </div>
+    <div class="service">
+        <img class="picture" src="images/Interior.png" alt="author" />
+        <div class="content">
+            <h2 class="name">INTERIOR VIRTUAL DECORATION</h2>
+            <div class="price">45,00€</div>
+            <div class="time">12 DAYS</div>
+            <div class="condition">New or Existing Space</div>
+            <div class="readmore"><a href="/interior-virtual-deco">Read More</a></div>
+        </div>
+    </div>
+    <div class="service">
+        <img class="picture" src="images/Exterior.png" alt="author" />
+        <div class="content">
+            <h2 class="name">EXTERIOR VIRTUAL DECORATION</h2>
+            <div class="price">99,00€</div>
+            <div class="time">3 DAYS</div>
+            <div class="condition">Existing Space</div>
+            <div class="readmore"><a href="/exterior-virtual-deco">Read More</a></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
