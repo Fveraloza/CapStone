@@ -1,39 +1,162 @@
-{% extends "base.html" %}
+<style>
 
-{% block title %}Realista | Matterport.{% endblock %}
-
-{% block main %}
-
-<script src='https://static.matterport.com/showcase-sdk/2.0.1-0-g64e7e88/sdk.js'>
-
-    <iframe width='853' height='480' src='https://my.matterport.com/show/?m=m8JcorizNTC&brand=0'
-    frameborder='0' allowfullscreen allow='xr-spatial-tracking'
-    id="show_iframe"></iframe>
-
-var iframe = document.getElementById('show_iframe');
-
-iframe.addEventListener('load', showcaseLoader, true);
-
-function showcaseLoader() {
-  try {
-    window.MP_SDK.connect(
-      iframe, // Obtained earlier
-      '44d0c51379574246aa826d3d40332275', // Your API key
-      '3.3' // SDK version you are using
-      // Use the latest version you can for your app
-      )
-      .then(loadedShowcaseHandler)
-      .catch(handleError);
+  body {
+      font-family: Source Sans Pro, sans-serif;
+      margin: auto;
   }
-  catch (e) {
-    console.error(e);
+
+  header {
+      background-color: #2d3038;
+      color: white;
+      padding: 2em;
   }
-};    
 
-    console.log("Key: 44d0c51379574246aa826d3d40332275 - https://static.matterport.com/showcase-sdk/2.0.0-0-g7edd6b8/sdk.js");
-    
-    
+  *#logotipo {
+      top:0;
+      left:0;
+      width: 15%;
+  }
 
-</script>
+  .container {
+      max-width: auto;
+      margin: auto;
+  }
 
-{% endblock %}
+  .main {
+      text-align: center;
+  }
+  .service {
+      display: inline-block;
+      border: 1px soild #ccc;
+      padding: 1em;
+      text-align: center;
+      margin: 1em;
+  }
+
+  .service:hover{
+      box-shadow: 5px 5px 5px #ccc;
+  }
+
+  .service .price {
+      color: #777;
+      font-size: 1.5em;
+  }
+
+  .service .time {
+      font-size: 1em;
+      margin: 0.5em 0;
+      color: #2d3038; 
+  }
+
+  .service .condition {
+      font-size: 1em;
+      width: 100%;
+      background-color: white;
+      margin: 0.3em 0;
+  }
+
+  .servive .readmore {
+  border: 1px solid lightblue;
+  width: 100%;
+  background-color: white;
+  font-size: 1em;
+  }
+  
+  .service .readmore:hover {
+  background-color: #ccc;
+  }
+
+  p {
+      text-align: center;
+  }
+
+  h2 {
+      text-align: center;
+  }
+
+  h3 {
+      text-align: center;
+  }
+
+  h6 {
+      text-align: center;
+  }
+
+  h1 {
+      color: #8ea3b3;
+      text-align: center;
+  }
+
+  footer {
+      background-color: #2d3038;
+      margin: auto;
+      text-align: center;
+      padding: 0.5em;
+  }
+
+  #item-footer {
+      color: white;
+      text-decoration: none;
+  }
+
+  .matterport {
+    text-align: center;
+    margin: auto;
+  }
+
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8"/>
+      <title>Realista | Matterport.</title>
+      <script src='https://static.matterport.com/showcase-sdk/2.0.1-0-g64e7e88/sdk.js'></script>
+      <!-- <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" /> -->
+  </head>
+  <body>
+      <div class="container">
+          <header>
+              <a href="/"><img id="logotipo" src="images/logo.png"></a>
+              <h1>DIGITALIZE YOUR SPACE</h1>
+              <h2>First online marketplace to promote your realstate, store, restaurant or office</h2>
+          </header>
+          <div class="matterport">
+            <iframe width='853' height='480' src='https://my.matterport.com/show/?m=m8JcorizNTC&play=1'
+            frameborder='0' allowfullscreen allow='xr-spatial-tracking'
+            id="show_iframe"></iframe>
+            <script>
+              var iframe = document.getElementById('show_iframe');
+              
+              iframe.addEventListener('load', showcaseLoader, true);
+              
+              function showcaseLoader() {
+                try {
+                  window.MP_SDK.connect(
+                    iframe, // Obtained earlier
+                    '44d0c51379574246aa826d3d40332275', // Your API key
+                    '3.3' // SDK version you are using
+                    // Use the latest version you can for your app
+                    )
+                    .then(loadedShowcaseHandler)
+                    .catch(handleError);
+                }
+                catch (e) {
+                  console.error(e);
+                }
+              };
+              
+              console.log("Key: 44d0c51379574246aa826d3d40332275 - https://static.matterport.com/showcase-sdk/2.0.0-0-g7edd6b8/sdk.js");
+
+            </script>
+
+          </div>
+      </div>
+  </body>
+  <footer class="footer-container">
+      <span><a id="item-footer" href="/index">Home | </a></span>
+      <span><a id="item-footer" href="#home">Contact Us | </a></span>
+      <span><a id="item-footer" href="#home">Blog</a></span>
+  </footer>
+</html>
+
