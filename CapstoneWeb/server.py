@@ -39,6 +39,11 @@ def matterport():
 
      return render_template("matterport.html")
 
+@app.route("/matterport2")
+def matterport2():
+
+     return render_template("matterport2.html")
+
 @app.route("/images/<image>.png")
 def serve_image(image):
     return send_from_directory("images/", filename="{}.png".format(image))

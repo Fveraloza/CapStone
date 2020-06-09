@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Realista | Matterport.{% endblock %}
+
+{% block main %}
+
+<div class="matterport">
+    <iframe width='853' height='480' src='https://my.matterport.com/show/?m=m8JcorizNTC&play=1'
+    frameborder='0' allowfullscreen allow='xr-spatial-tracking'
+    id="show_iframe"></iframe>
+    <script>
+      var iframe = document.getElementById('show_iframe');
+      
+      iframe.addEventListener('load', showcaseLoader, true);
+      
+      function showcaseLoader() {
+        try {
+          window.MP_SDK.connect(
+            iframe, // Obtained earlier
+            '44d0c51379574246aa826d3d40332275', // Your API key
+            '3.3' // SDK version you are using
+            // Use the latest version you can for your app
+            )
+            .then(loadedShowcaseHandler)
+            .catch(handleError);
+        }
+        catch (e) {
+          console.error(e);
+        }
+      };
+      
+      console.log("Key: 44d0c51379574246aa826d3d40332275 - https://static.matterport.com/showcase-sdk/2.0.0-0-g7edd6b8/sdk.js");
+
+    </script>
+
+  </div>
+
+{% endblock %}
