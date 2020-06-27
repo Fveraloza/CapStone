@@ -1,7 +1,580 @@
 {% extends "base.html" %}
 
-{% block title %}Realista | Virtual Decoration.{% endblock %}
+{% block title %}Realista | Virtual Decoration{% endblock %}
 
 {% block main %}
+
+<style>
+
+    header {
+        background-image: url(https://www.realista.io/wp-content/uploads/2020/04/3D-EXTERIOR-MODELING-e1587715444724.jpg);
+        position: relative;
+        height: 507px;
+        background-attachment: scroll;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    
+    .upb_bg_overlay,
+    .upb_bg_overlay_pattern {
+        color: inherit;
+        position: absolute;
+        width: 100%;
+        height: 100% !important;
+        left: 0;
+        top: 0;
+    }
+
+    #logotipo {
+        z-index: -1;
+
+    }
+
+    .benefits {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+
+    }
+
+    body {
+        color: #213546;
+        background: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .title {
+        position: relative;
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+        display: grid;
+        grid-gap: 20px;
+    }
+
+    .timeline {
+        position: relative;
+        width: 100%;
+        padding: 30px 0;
+    }
+
+    .timeline .timeline-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .timeline .timeline-end,
+    .timeline .timeline-start,
+    .timeline .timeline-year {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+
+    }
+
+    .timeline .timeline-end div,
+    .timeline .timeline-start div,
+    .timeline .timeline-year div {
+        display: inline-block;
+        width: 20px;
+        height: 20px !important;
+        margin: 0;
+
+        text-align: center;
+        background: black;
+        border-radius: 50px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+        color: #ffffff;
+        font-size: 0px;
+        text-transform: uppercase;
+
+    }
+
+    .timeline .timeline-year {
+        margin: 30px 0;
+    }
+
+    .timeline .timeline-continue {
+        position: relative;
+        width: 100%;
+        padding: 60px 0;
+    }
+
+    .timeline .timeline-continue::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        margin-left: -1px;
+        background: black;
+    }
+
+    .timeline .row.timeline-left,
+    .timeline .row.timeline-right .timeline-date {
+        text-align: right;
+    }
+
+    .timeline .row.timeline-right,
+    .timeline .row.timeline-left .timeline-date {
+        text-align: left;
+    }
+
+    .timeline .timeline-date {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 41px 0 0 0;
+    }
+
+    .timeline .timeline-date::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 45px;
+        background: black;
+        box-shadow: 0 0 5px black;
+        border-radius: 15px;
+        z-index: 1;
+    }
+
+    .timeline .row.timeline-left .timeline-date::after {
+        left: -7px;
+    }
+
+    .timeline .row.timeline-right .timeline-date::after {
+        right: -7px;
+    }
+
+    .timeline .timeline-box,
+    .timeline .timeline-launch {
+        position: relative;
+        display: inline-block;
+        margin: 15px;
+        padding: 20px;
+        border: 1px solid #dddddd;
+        border-radius: 6px;
+        background: #ffffff;
+    }
+
+    .timeline .timeline-launch {
+        width: 100%;
+        margin: 15px 0;
+        padding: 0;
+        border: none;
+        text-align: center;
+        background: transparent;
+    }
+
+    .timeline .timeline-box::after,
+    .timeline .timeline-box::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    .timeline .row.timeline-left .timeline-box::after,
+    .timeline .row.timeline-left .timeline-box::before {
+        left: 100%;
+    }
+
+    .timeline .row.timeline-right .timeline-box::after,
+    .timeline .row.timeline-right .timeline-box::before {
+        right: 100%;
+    }
+
+    .timeline .timeline-launch .timeline-box::after,
+    .timeline .timeline-launch .timeline-box::before {
+        left: 50%;
+        margin-left: -10px;
+    }
+
+    .timeline .timeline-box::after {
+        top: 26px;
+        border-color: transparent transparent transparent #ffffff;
+        border-width: 10px;
+    }
+
+    .timeline .timeline-box::before {
+        top: 25px;
+        border-color: transparent transparent transparent #dddddd;
+        border-width: 11px;
+    }
+
+    .timeline .row.timeline-right .timeline-box::after {
+        border-color: transparent #ffffff transparent transparent;
+    }
+
+    .timeline .row.timeline-right .timeline-box::before {
+        border-color: transparent #dddddd transparent transparent;
+    }
+
+    .timeline .timeline-launch .timeline-box::after {
+        top: -20px;
+        border-color: transparent transparent #dddddd transparent;
+    }
+
+    .timeline .timeline-launch .timeline-box::before {
+        top: -19px;
+        border-color: transparent transparent #ffffff transparent;
+        border-width: 10px;
+        z-index: 1;
+    }
+
+    .timeline .timeline-box .timeline-icon {
+        position: relative;
+        width: 40px;
+        height: auto;
+        float: left;
+    }
+
+    .timeline .timeline-icon i {
+        font-size: 25px;
+        color: black;
+    }
+
+    .timeline .timeline-box .timeline-text {
+        position: relative;
+        width: calc(100% - 40px);
+        float: left;
+    }
+
+    .timeline .timeline-launch .timeline-text {
+        width: 100%;
+    }
+
+    .timeline .timeline-text h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    .timeline .timeline-text p {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .timeline .timeline-continue::after {
+            left: 40px;
+        }
+
+        .timeline .timeline-end,
+        .timeline .timeline-start,
+        .timeline .timeline-year,
+        .timeline .row.timeline-left,
+        .timeline .row.timeline-right .timeline-date,
+        .timeline .row.timeline-right,
+        .timeline .row.timeline-left .timeline-date,
+        .timeline .timeline-launch {
+            text-align: left;
+        }
+
+        .timeline .row.timeline-left .timeline-date::after,
+        .timeline .row.timeline-right .timeline-date::after {
+            left: 47px;
+        }
+
+        .timeline .timeline-box,
+        .timeline .row.timeline-right .timeline-date,
+        .timeline .row.timeline-left .timeline-date {
+            margin-left: 55px;
+        }
+
+        .timeline .timeline-launch .timeline-box {
+            margin-left: 0;
+        }
+
+        .timeline .row.timeline-left .timeline-box::after {
+            left: -20px;
+            border-color: transparent #ffffff transparent transparent;
+        }
+
+        .timeline .row.timeline-left .timeline-box::before {
+            left: -22px;
+            border-color: transparent #dddddd transparent transparent;
+        }
+
+        .timeline .timeline-launch .timeline-box::after,
+        .timeline .timeline-launch .timeline-box::before {
+            left: 30px;
+            margin-left: 0;
+        }
+    }
+</style>
+
+<div class="container mx-0 p-0" style="position: relative;max-width:100%">
+    <header>
+        <div class="upb_bg_overlay" style="background-color:rgba(24,27,36,0.5); z-index: 1;"></div>
+        <!-- <div class="container mx-0 p-0" style="left:0;top:0; width:100%; height: 100%;position: absolute;background-color:#1a1a1da3!important"></div> -->
+        <div class="container mx-0 p-0" style="text-align: left;z-index:10">
+            <a href="/"><img id="logotipo"
+                    src="https://www.realista.io/wp-content/uploads/2020/06/78ed3e5c-557c-42f8-a679-2.png"></a>
+        </div>
+        <div style="width: 100%; display: flex; text-align: center; justify-content: center;">
+            <h1 style="color: white;z-index:10; position:absolute; text-align:center"> EXTERNAL 3D MODEL </h1>
+            
+        </div>
+
+
+    </header>
+
+</div>
+
+<div class="description">
+    <div class="container mx-0" style="max-width: 100%; height: 350px; justify-content: center; align-items: center; display: flex; flex-direction: column;">
+        <div>
+            <h2> DESCRIPTION </h2>
+            <p> We work according to your specifications with a highly professional team and a level of detail that
+                makes this a realistic experience. </p>
+            <p> We design concepts for residential, commercial and apartment properties, taking into account the target
+                audience and the concept that is sought to convey. </p>
+            <p> Also remodeling of existing spaces with discounted prices depending on the number of environments
+                required </p>
+            <hr style="width: 900px;">
+        </div>
+    </div>
+</div>
+
+<div class="benefits">
+    <div class="container mx-0" style="background-color: rgb(232, 236, 241); max-width:100%; height: 300px">
+        <div>
+            <h2> BENEFITS OF THE EXTERNAL 3D MODEL </h2>
+            <p> We simplify the process and optimize the time of our clients. </p>
+            <hr style="width: 900px;">
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>COST</h3>
+                <p> An alternative to save on design</p>
+            </div>
+            <div class="col">
+                <h3>RETENTION</h3>
+                <p> Higher level of content recall</p>
+
+            </div>
+            <div class="col">
+                <h3>DISPLAY</h3>
+                <p>Lets see the expected result of a project</p>
+
+            </div>
+            <div class="col">
+                <h3>FLEXIBILITY</h3>
+                <p>Possibility of making changes with relative ease</p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="title">
+    <span> BEFORE STARTING </span>
+    <h2>PROCESS</h2>
+    <p>We simplify the process and optimize the time of our clients</p>
+    <hr style="width: 900px;">
+</div>
+<div class="timeline">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="timeline-container">
+                    <div class="timeline-end">
+                        <div></div>
+                    </div>
+                    <div class="timeline-continue">
+
+                        <div class="row timeline-right">
+                            <div class="col-md-6">
+                                <p class="timeline-date">
+
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="timeline-box">
+                                    <div class="timeline-icon">
+                                        <i class="fa fa-gift"></i>
+                                    </div>
+                                    <div class="timeline-text">
+                                        <h3>1. INITIAL CONTACT</h3>
+                                        <p>We will request information about the target audience, content and images to
+                                            design the solution that meets your needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row timeline-left">
+                            <div class="col-md-6 d-md-none d-block">
+                                <p class="timeline-date">
+
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="timeline-box">
+                                    <div class="timeline-icon d-md-none d-block">
+                                        <i class="fa fa-business-time"></i>
+                                    </div>
+                                    <div class="timeline-text">
+                                        <h3>2. DEVELOPMENT</h3>
+                                        <p>We will send a properly identified representative of our team to the agreed
+                                            address to carry out the work.</p>
+                                    </div>
+                                    <div class="timeline-icon d-md-block d-none">
+                                        <i class="fa fa-business-time"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-block d-none">
+                                <p class="timeline-date">
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="row">
+                            <div class="col-12">
+                                <div class="timeline-year">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="row timeline-right">
+                            <div class="col-md-6">
+                                <p class="timeline-date">
+
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="timeline-box">
+                                    <div class="timeline-icon">
+                                        <i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <div class="timeline-text">
+                                        <h3>3. REVIEW</h3>
+                                        <p>After presenting the project, you can make up to 3 corrections at no
+                                            additional charge.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row timeline-left">
+                            <div class="col-md-6 d-md-none d-block">
+                                <p class="timeline-date">
+
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="timeline-box">
+                                    <div class="timeline-icon d-md-none d-block">
+                                        <i class="fa fa-cogs"></i>
+                                    </div>
+                                    <div class="timeline-text">
+                                        <h3>4. FINAL DELIVERY</h3>
+                                        <p>We provide the links so that you can access content that includes 6-month
+                                            hosting with the option to expand.</p>
+                                    </div>
+                                    <div class="timeline-icon d-md-block d-none">
+                                        <i class="fa fa-cogs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-block d-none">
+                                <p class="timeline-date">
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row timeline-right">
+                            <!-- <div class="col-md-6">
+
+                            </div> -->
+                            <div class="col-md-6">
+                                
+                                    <div class="timeline-icon">
+                                        <i class="fa fa-running"></i>
+                                    
+
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row timeline-left">
+                            <div class="col-md-6 d-md-none d-block">
+                               
+                            </div>
+                            <div class="col-md-6">
+                                
+                                    <div class="timeline-icon d-md-none d-block">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+
+                                    <div class="timeline-icon d-md-block d-none">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                
+                            </div>
+                            <div class="col-md-6 d-md-block d-none">
+                                
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-start">
+                        <div></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="previous-jobs">
+    <div class="container mx-0" style="background-color: rgb(232, 236, 241); max-width:100%; height: 750px">
+        <div>
+            <h2> PREVIOUS JOBS </h2>
+            <p> Learn about some of the work done by Realista </p>
+            <hr style="width: 900px;">
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <img src="https://www.realista.io/wp-content/uploads/2020/05/animacion-video-realista-3d-1.png">
+            </div>
+
+            <div class="col">
+                <img src="https://www.realista.io/wp-content/uploads/2020/05/3d-modelo-exito-exterior-copia.png">
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <img src="https://www.realista.io/wp-content/uploads/2020/05/modelo-exterior-caso-de-exito.png">
+            </div>
+
+            <div class="col">
+                <img src="https://www.realista.io/wp-content/uploads/2020/05/modelo-exito-exterior-caso.png">
+            </div>
+
+        </div>
+    </div>
+</div>
 
 {% endblock %}

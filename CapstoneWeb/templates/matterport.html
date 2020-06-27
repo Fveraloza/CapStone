@@ -4,10 +4,333 @@
 
 {% block main %}
 
+<style>
+  header {
+      background-image: url(https://www.realista.io/wp-content/uploads/2020/04/5bb7d4d382df354ff7b33f9e_Matterport-Virtual-Tours-UK-1-e1587659201915.jpg);
+      position: relative;
+      height: 507px;
+      background-attachment: scroll;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0);
+  }
+
+  .upb_bg_overlay,
+  .upb_bg_overlay_pattern {
+      color: inherit;
+      position: absolute;
+      width: 100%;
+      height: 100% !important;
+      left: 0;
+      top: 0;
+  }
+
+  #logotipo {
+      z-index: -1;
+
+  }
+
+  .benefits {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+
+  }
+
+  body {
+      color: #213546;
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .title {
+      position: relative;
+      margin-top: 30px;
+      width: 100%;
+      text-align: center;
+      display: grid;
+      grid-gap: 20px;
+  }
+
+  .timeline {
+      position: relative;
+      width: 100%;
+      padding: 30px 0;
+  }
+
+  .timeline .timeline-container {
+      position: relative;
+      width: 100%;
+  }
+
+  .timeline .timeline-end,
+  .timeline .timeline-start,
+  .timeline .timeline-year {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+
+  }
+
+  .timeline .timeline-end div,
+  .timeline .timeline-start div,
+  .timeline .timeline-year div {
+      display: inline-block;
+      width: 20px;
+      height: 20px !important;
+      margin: 0;
+
+      text-align: center;
+      background: black;
+      border-radius: 50px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+      color: #ffffff;
+      font-size: 0px;
+      text-transform: uppercase;
+
+  }
+
+  .timeline .timeline-year {
+      margin: 30px 0;
+  }
+
+  .timeline .timeline-continue {
+      position: relative;
+      width: 100%;
+      padding: 60px 0;
+  }
+
+  .timeline .timeline-continue::after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      margin-left: -1px;
+      background: black;
+  }
+
+  .timeline .row.timeline-left,
+  .timeline .row.timeline-right .timeline-date {
+      text-align: right;
+  }
+
+  .timeline .row.timeline-right,
+  .timeline .row.timeline-left .timeline-date {
+      text-align: left;
+  }
+
+  .timeline .timeline-date {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 41px 0 0 0;
+  }
+
+  .timeline .timeline-date::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      top: 45px;
+      background: black;
+      box-shadow: 0 0 5px black;
+      border-radius: 15px;
+      z-index: 1;
+  }
+
+  .timeline .row.timeline-left .timeline-date::after {
+      left: -7px;
+  }
+
+  .timeline .row.timeline-right .timeline-date::after {
+      right: -7px;
+  }
+
+  .timeline .timeline-box,
+  .timeline .timeline-launch {
+      position: relative;
+      display: inline-block;
+      margin: 15px;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      background: #ffffff;
+  }
+
+  .timeline .timeline-launch {
+      width: 100%;
+      margin: 15px 0;
+      padding: 0;
+      border: none;
+      text-align: center;
+      background: transparent;
+  }
+
+  .timeline .timeline-box::after,
+  .timeline .timeline-box::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+  }
+
+  .timeline .row.timeline-left .timeline-box::after,
+  .timeline .row.timeline-left .timeline-box::before {
+      left: 100%;
+  }
+
+  .timeline .row.timeline-right .timeline-box::after,
+  .timeline .row.timeline-right .timeline-box::before {
+      right: 100%;
+  }
+
+  .timeline .timeline-launch .timeline-box::after,
+  .timeline .timeline-launch .timeline-box::before {
+      left: 50%;
+      margin-left: -10px;
+  }
+
+  .timeline .timeline-box::after {
+      top: 26px;
+      border-color: transparent transparent transparent #ffffff;
+      border-width: 10px;
+  }
+
+  .timeline .timeline-box::before {
+      top: 25px;
+      border-color: transparent transparent transparent #dddddd;
+      border-width: 11px;
+  }
+
+  .timeline .row.timeline-right .timeline-box::after {
+      border-color: transparent #ffffff transparent transparent;
+  }
+
+  .timeline .row.timeline-right .timeline-box::before {
+      border-color: transparent #dddddd transparent transparent;
+  }
+
+  .timeline .timeline-launch .timeline-box::after {
+      top: -20px;
+      border-color: transparent transparent #dddddd transparent;
+  }
+
+  .timeline .timeline-launch .timeline-box::before {
+      top: -19px;
+      border-color: transparent transparent #ffffff transparent;
+      border-width: 10px;
+      z-index: 1;
+  }
+
+  .timeline .timeline-box .timeline-icon {
+      position: relative;
+      width: 40px;
+      height: auto;
+      float: left;
+  }
+
+  .timeline .timeline-icon i {
+      font-size: 25px;
+      color: black;
+  }
+
+  .timeline .timeline-box .timeline-text {
+      position: relative;
+      width: calc(100% - 40px);
+      float: left;
+  }
+
+  .timeline .timeline-launch .timeline-text {
+      width: 100%;
+  }
+
+  .timeline .timeline-text h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 3px;
+  }
+
+  .timeline .timeline-text p {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+      .timeline .timeline-continue::after {
+          left: 40px;
+      }
+
+      .timeline .timeline-end,
+      .timeline .timeline-start,
+      .timeline .timeline-year,
+      .timeline .row.timeline-left,
+      .timeline .row.timeline-right .timeline-date,
+      .timeline .row.timeline-right,
+      .timeline .row.timeline-left .timeline-date,
+      .timeline .timeline-launch {
+          text-align: left;
+      }
+
+      .timeline .row.timeline-left .timeline-date::after,
+      .timeline .row.timeline-right .timeline-date::after {
+          left: 47px;
+      }
+
+      .timeline .timeline-box,
+      .timeline .row.timeline-right .timeline-date,
+      .timeline .row.timeline-left .timeline-date {
+          margin-left: 55px;
+      }
+
+      .timeline .timeline-launch .timeline-box {
+          margin-left: 0;
+      }
+
+      .timeline .row.timeline-left .timeline-box::after {
+          left: -20px;
+          border-color: transparent #ffffff transparent transparent;
+      }
+
+      .timeline .row.timeline-left .timeline-box::before {
+          left: -22px;
+          border-color: transparent #dddddd transparent transparent;
+      }
+
+      .timeline .timeline-launch .timeline-box::after,
+      .timeline .timeline-launch .timeline-box::before {
+          left: 30px;
+          margin-left: 0;
+      }
+  }
+</style>
+
+<div class="container mx-0 p-0" style="position: relative;max-width:100%">
+  <header>
+      <div class="upb_bg_overlay" style="background-color:rgba(24,27,36,0.5); z-index: 1;"></div>
+      <!-- <div class="container mx-0 p-0" style="left:0;top:0; width:100%; height: 100%;position: absolute;background-color:#1a1a1da3!important"></div> -->
+      <div class="container mx-0 p-0" style="text-align: left;z-index:10">
+          <a href="/"><img id="logotipo"
+                  src="https://www.realista.io/wp-content/uploads/2020/06/78ed3e5c-557c-42f8-a679-2.png"></a>
+      </div>
+      <div style="width: 100%; display: flex; text-align: center; justify-content: center;">
+          <h1 style="color: white;z-index:10; position:absolute; text-align:center"> MATTERPORT VIRTUAL TOUR </h1>
+          
+      </div>
+
+
+  </header>
+
+</div>
+
 <div class="main">
   <h3>DESCRIPTION</h3>
-  <p>One of the most innovative technologies in the market. virtualizar tu espacio en tiempo record y con la más alta calidad, obteniendo fotografías, recorrido virtual y vistas de planta.
-    Asimismo ofrece la posibilidad de personalizar el tour con texto, links a páginas web o multimedia como imágenes, audio o vídeo en una gran variedad de formatos, convirtiéndose en una herramienta muy versátil para promocionar alguna propiedad o establecimiento.</p>
+  <p>One of the most innovative technologies in the market. blablablablam\ more text here</p>
 </div>
 <div class="matterport">
     <iframe width='853' height='480' src='https://my.matterport.com/show/?m=m8JcorizNTC&brand=0&play=1'
@@ -44,5 +367,7 @@
     <h3>BENEFITS OF MATTERPORT VIRTUAL TOUR</h3>
     <P>Bla,bla, bla</P>
   </div>
+
+
 
 {% endblock %}
