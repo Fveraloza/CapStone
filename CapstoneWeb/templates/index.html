@@ -65,7 +65,7 @@
         height: 31;
     }
 
-     .container {
+    .container {
         max-width: auto;
         margin: auto;
     }
@@ -83,7 +83,7 @@
     }
 
     .service:hover {
-        box-shadow: 5px 5px 5px #ccc;
+        box-shadow: 5px 5px 5px transparent;
     }
 
     .service .price {
@@ -113,17 +113,17 @@
     }
 
     .service .readmore:hover {
-        background-color: #ccc;
+        background-color: transparent;
     }
 
-    .subwhyrealista{
+    .subwhyrealista {
         max-width: 250px;
         display: table;
         margin: 0 auto;
 
     }
 
-    .col{
+    .col {
         text-align: center;
         align-content: center;
     }
@@ -152,7 +152,20 @@
 
     }
 
+    .picture {
 
+        max-width: 500;
+        max-height: 280;
+        max-width: fit-content;
+    }
+
+    .dot {
+        background-color: #ffffff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: inline-block;
+    }
 </style>
 
 
@@ -181,18 +194,22 @@
     </div>
 
     <div style="position: inherit; top: 40px">
-        <hr style="width: 150px;border-style: solid; border-bottom-width: 3px; border-color: rgb(142, 163, 179); left: 50%">
+        <hr
+            style="width: 150px;border-style: solid; border-bottom-width: 3px; border-color: rgb(142, 163, 179); left: 50%">
     </div>
 
     <div style="position: inherit; top: 40px; left: 250px;max-width:1000px;">
         <p style="font-size: 25px; text-align:center">
-            We are a company dedicated to offering digital solutions to increase exposure of your physical spaces, brand recognition and potential customers.
+            We are a company dedicated to offering digital solutions to increase exposure of your physical spaces, brand
+            recognition and potential customers.
         </p>
 
     </div>
 
     <div style="position: inherit; top: 17%; left: 42%">
-        <a href="/#main" class="btn btn-primary" style="color: white ; background-color:transparent; border-color:white; position:inherit; border-radius: 50px; width: 250px">Learn More</a>
+        <a href="/#main" class="btn btn-primary"
+            style="color: white ; background-color:transparent; border-color:white; position:inherit; border-radius: 50px; width: 250px">Learn
+            More</a>
     </div>
 
 </header>
@@ -201,81 +218,107 @@
 
 <div class="main" id="main">
     <h1 style="color:#2d3038;">SERVICES</h1>
-    <hr style="width: 150px;border-style: solid; border-bottom-width: 3px; border-color: rgb(142, 163, 179); left: 50%;">
-    <div class="service">
-        <img class="picture" src="images/Matterport.png" alt="author" />
-        <div class="content">
-            <h2 class="name">MATTERPORT VIRTUAL TOUR</h2>
-            <div class="price">From 99,00€</div>
-            <div class="time">5 DAYS</div>
-            <div class="condition">Existing Space</div>
-            <div class="readmore"><a href="/matterport">Read More</a></div>
+    <hr
+        style="width: 150px;border-style: solid; border-bottom-width: 3px; border-color: rgb(142, 163, 179); left: 50%;">
+
+    <a href="/matterport">
+        <div class="service">
+            <img class="picture"
+                src="https://www.realista.io/wp-content/uploads/2020/04/5bb7d4d382df354ff7b33f9e_Matterport-Virtual-Tours-UK-1-e1587659201915.jpg"
+                alt="Matterport Virtual Tour" src="/matterport" />
+            <div class="content">
+                <h2 class="name">Matterport Virtual Tour </h2>
+            </div>
         </div>
-    </div>
-    <div class="service">
-        <img class="picture" src="images/3dModeling.png" alt="author" />
-        <div class="content">
-            <h2 class="name">3D MODELING</h2>
-            <div class="price">450,00€</div>
-            <div class="time">12 DAYS</div>
-            <div class="condition">New Space</div>
-            <div class="readmore"><a href="/3d-modeling">Read More</a></div>
+    </a>
+
+    <a href="/3d-modeling">
+        <div class="service">
+            <img class="picture" src="https://www.realista.io/wp-content/uploads/2020/04/video-e1587715615732.jpg"
+                alt="author" src="/3d-modeling" />
+            <div class="content">
+                <h2 class="name">3D Animation Video</h2>
+            </div>
         </div>
-    </div>
-    <div class="service">
-        <img class="picture" src="images/Interior.png" alt="author" />
-        <div class="content">
-            <h2 class="name">INTERIOR VIRTUAL DECORATION</h2>
-            <div class="price">45,00€</div>
-            <div class="time">12 DAYS</div>
-            <div class="condition">New or Existing Space</div>
-            <div class="readmore"><a href="/interior-virtual-deco">Read More</a></div>
+    </a>
+
+    <a href="/interior-virtual-deco">
+        <div class="service">
+            <img class="picture" src="https://www.realista.io/wp-content/uploads/2020/05/modelo-3d-interior.jpg"
+                alt="3D Interior Model" src="/interior-virtual-deco" />
+            <div class="content">
+                <h2 class="name">3D Interior Model</h2>
+            </div>
         </div>
-    </div>
-    <div class="service">
-        <img class="picture" src="images/Exterior.png" alt="author" />
-        <div class="content">
-            <h2 class="name">EXTERIOR VIRTUAL DECORATION</h2>
-            <div class="price">99,00€</div>
-            <div class="time">3 DAYS</div>
-            <div class="condition">Existing Space</div>
-            <div class="readmore"><a href="/exterior-virtual-deco">Read More</a></div>
+    </a>
+
+    <a href="/exterior-virtual-deco">
+        <div class="service">
+            <img class="picture"
+                src="https://www.realista.io/wp-content/uploads/2020/04/3D-EXTERIOR-MODELING-e1587715444724.jpg"
+                alt="author" src="exterior-virtual-deco" />
+            <div class="content">
+                <h2 class="name">Exterior 3D Model</h2>
+            </div>
         </div>
-    </div>
+    </a>
 </div>
 
 
 <div class="whyrealista">
     <div class="container mx-0" style="background-color: rgb(198, 198, 198, 0.33); max-width:100%; height: 365px">
         <div>
-            <h2  style="color:#2d3038;"> WHY REALISTA </h2>
-            <hr style="width: 150px;border-style: solid; border-bottom-width: 3px; border-color: rgb(142, 163, 179); left: 50% ">
+            <h2 style="color:#2d3038; left: 50%"> WHY REALISTA </h2>
+            <hr
+                style="width: 150px;border-style: solid; border-bottom-width: 3px; border-color: rgb(142, 163, 179); left: 50% ">
         </div>
         <div class="row">
             <div class="col">
-
+                <div class=icons>
+                    <div>
+                        <span class="dot">
+                            <div>
+                                <i class='fa fa-eur' style='font-size:24px; padding-top:25%'></i>
+                            </div>
+                        </span>
+                    </div>
+                </div>
                 <h3>PRICE</h3>
                 <div class="subwhyrealista">
-                    <p>We maintain clear communication throughout the process and are flexible in the event that a change or
-                        correction is required.
+                    <p>We offer highly competitive rates in the market for all our services, combined with the highest
+                        quality standards.
                     </p>
                 </div>
             </div>
             <div class="col">
+                <div class=icons>
+                    <span class="dot">
+                        <div>
+                            <i class="far fa-clock-o" style="font-size:24px; padding-top:25%"></i>
+                        </div>
+                    </span>
+                </div>
                 <h3>SPEED</h3>
                 <div class="subwhyrealista">
-                    <p>We maintain clear communication throughout the process and are flexible in the event that a change or
-                        correction is required.
+                    <p>Our final product is delivered in record time. Usually between 1 to 2 weeks, depending on the
+                        characteristics of the project.
                     </p>
                 </div>
 
             </div>
             <div class="col">
-
+                <div class=icons>
+                    <span class="dot">
+                        <div>
+                            <i class="far fa-comment-dots" style="font-size:24px; padding-top:25%"></i>
+                        </div>
+                    </span>
+                </div>
                 <h3>TRANSPARENCY</h3>
                 <div class="subwhyrealista">
-                    <p>We maintain clear communication throughout the process and are flexible in the event that a change or
-                    correction is required.
+                    <p>We maintain clear communication throughout the process and are flexible in the event that a
+                        change or
+                        correction is required.
                     </p>
                 </div>
 
