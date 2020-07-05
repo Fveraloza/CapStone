@@ -319,37 +319,116 @@
             margin-left: 0;
         }
     }
+
+
+    .button {
+        background-color: transparent;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        font-family: Open Sans, sans-serif;
+        margin-right: 100px;
+
+    }
+
+    .button:hover {
+        background-color: transparent;
+        color: white;
+    }
+
+    .dropbtn {
+        background-color: transparent;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        font-family: Open Sans, sans-serif;
+        margin-right: 100px;
+
+
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        float: unset;
+        left: 60%;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: transparent;
+    }
 </style>
 
 
-    <header>
-        <div class="upb_bg_overlay" style="background-color:rgba(24,27,36,0.5);"></div>
+<header>
+    <div class="upb_bg_overlay" style="background-color:rgba(24,27,36,0.5);"></div>
 
-            <a href="/"><img id="logotipo"
-                    src="https://www.realista.io/wp-content/uploads/2020/06/78ed3e5c-557c-42f8-a679-2.png"></a>
+    <a href="/"><img id="logotipo"
+            src="https://www.realista.io/wp-content/uploads/2020/06/78ed3e5c-557c-42f8-a679-2.png"></a>
+
+    <a href="/" class="button" style="left:67%">HOME</a>
+
+
+
+
+    <div class="dropdown">
+        <button class="dropbtn">SERVICES</button>
+        <div class="dropdown-content">
+            <a href="/matterport">MATTERPORT VIRTUAL TOUR</a>
+            <a href="/3d-modeling">3D ANIMATION VIDEO</a>
+            <a href="/interior-virtual-deco">3D INTERIOR MODEL</a>
+            <a href="/exterior-virtual-deco">3D EXTERIOR MODEL</a>
+        </div>
+    </div>
+
+    <div>
+        <div style="width: 100%; display: flex; text-align: center; justify-content: center;">
+            <h1 style="color: white;z-index:10; position:absolute; text-align:center; top: 25%;"> 3D ANIMATION VIDEO
+            </h1>
+        </div>
 
         <div>
-            <div style="width: 100%; display: flex; text-align: center; justify-content: center;">
-                <h1 style="color: white;z-index:10; position:absolute; text-align:center; top: 25%;"> 3D ANIMATION VIDEO
-                </h1>
-            </div>
-
-            <div>
-                <p
-                    style="color: white; position:absolute; z-index:10; left:21%; top: 45%; max-width: 990px; font-size:large; text-align: center;">
-                    Explain all the important aspects of your project in a shared video made by our incredible team of
-                    architects.</p>
-            </div>
+            <p
+                style="color: white; position:absolute; z-index:10; left:21%; top: 45%; max-width: 990px; font-size:large; text-align: center;">
+                Explain all the important aspects of your project in a shared video made by our incredible team of
+                architects.</p>
         </div>
+    </div>
 
 
-        <div class=container style="position: relative; z-index:10; top:60%; text-align: center">
-            <a href="/3d-modeling#description" class="btn btn-primary"
-                style="color: white ; background-color:rgb(142, 163, 179); border-color:rgb(142, 163, 179); border-radius: 50px; width: 250px">Learn
-                More</a>
-        </div>
+    <div class=container style="position: relative; z-index:10; top:60%; text-align: center">
+        <a href="/3d-modeling#description" class="btn btn-primary"
+            style="color: white ; background-color:rgb(142, 163, 179); border-color:rgb(142, 163, 179); border-radius: 50px; width: 250px">Learn
+            More</a>
+    </div>
 
-    </header>
+</header>
 
 
 

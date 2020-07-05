@@ -322,6 +322,70 @@
             margin-left: 0;
         }
     }
+
+
+    .button {
+        background-color: transparent;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        font-family: Open Sans, sans-serif;
+        margin-right: 100px;
+
+    }
+
+    .button:hover {
+        background-color: transparent;
+        color: white;
+    }
+
+    .dropbtn {
+        background-color: transparent;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        font-family: Open Sans, sans-serif;
+        margin-right: 100px;
+
+
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        float: unset;
+        left: 60%;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: transparent;
+    }
 </style>
 
 <header>
@@ -329,6 +393,21 @@
 
     <a href="/"><img id="logotipo"
             src="https://www.realista.io/wp-content/uploads/2020/06/78ed3e5c-557c-42f8-a679-2.png"></a>
+
+    <a href="/" class="button" style="left:67%">HOME</a>
+
+
+
+
+    <div class="dropdown">
+        <button class="dropbtn">SERVICES</button>
+        <div class="dropdown-content">
+            <a href="/matterport">MATTERPORT VIRTUAL TOUR</a>
+            <a href="/3d-modeling">3D ANIMATION VIDEO</a>
+            <a href="/interior-virtual-deco">3D INTERIOR MODEL</a>
+            <a href="/exterior-virtual-deco">3D EXTERIOR MODEL</a>
+        </div>
+    </div>
 
     <div>
         <div style="width: 100%; display: flex; text-align: center; justify-content: center;">
@@ -358,17 +437,17 @@
         <div>
             <h2> DESCRIPTION </h2>
 
-                <p class="descriptionp"> We work according to your specifications with a highly professional team and a
-                    level of detail that
-                    makes this a realistic experience. </p>
-                <p class="descriptionp"> We design concepts for residential, commercial and apartment properties, taking
-                    into account the target
-                    audience and the concept that is sought to convey. </p>
-                <p class="descriptionp"> Also remodeling of existing spaces with discounted prices depending on the
-                    number of environments
-                    required </p>
-                <hr style="width: 900px;">
-            
+            <p class="descriptionp"> We work according to your specifications with a highly professional team and a
+                level of detail that
+                makes this a realistic experience. </p>
+            <p class="descriptionp"> We design concepts for residential, commercial and apartment properties, taking
+                into account the target
+                audience and the concept that is sought to convey. </p>
+            <p class="descriptionp"> Also remodeling of existing spaces with discounted prices depending on the
+                number of environments
+                required </p>
+            <hr style="width: 900px;">
+
         </div>
     </div>
 </div>
