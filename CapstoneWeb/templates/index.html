@@ -2,67 +2,24 @@
 
 {% block title %}Realista | Digitalize your space.{% endblock %}
 
-
-{% block main %}
 <style>
+
     body {
         font-family: Source Sans Pro, sans-serif;
         margin: auto;
     }
 
     header {
-        background-image: url(https://www.realista.io/wp-content/uploads/2020/04/5ba370a5ff7d47baa37006a5_5b34e4773607a332325b224f_kimon-maritz-183501-unsplash.jpg);
-        position: relative;
-        height: 100%;
-
-
-        background-attachment: scroll;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: rgba(0, 0, 0, 0);
-
+        background-color: #2d3038;
+        color: white;
+        padding: 2em;
     }
 
-
-    .upb_row_bg,
-    .vcpb-default {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: rgba(0, 0, 0, 0);
-        background-attachment: scroll;
-        min-width: 1026px;
-        left: -35px;
-        width: 1026px;
-    }
-
-
-
-    .upb_bg_overlay,
-    .upb_bg_overlay_pattern {
-        background-color: #181b24e6 !important;
-        position: absolute;
-        width: 100%;
-        height: 100% !important;
-        left: 0;
-        top: 0;
-    }
-
-
-    .uvc-heading-spacer {
-        margin: 0 auto;
-        padding: 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-
-    #logotipo {
-        position: sticky;
-        top: 20;
-        left: 20;
-        width: 149;
-        height: 31;
-    }
+    /*#logotipo {
+        position:fixed;
+        top:0;
+        left:0;
+    }*/
 
     .container {
         max-width: auto;
@@ -72,7 +29,6 @@
     .main {
         text-align: center;
     }
-
     .service {
         display: inline-block;
         border: 1px soild #ccc;
@@ -81,8 +37,8 @@
         margin: 1em;
     }
 
-    .service:hover {
-        box-shadow: 5px 5px 5px transparent;
+    .service:hover{
+        box-shadow: 5px 5px 5px #ccc;
     }
 
     .service .price {
@@ -93,7 +49,7 @@
     .service .time {
         font-size: 1em;
         margin: 0.5em 0;
-        color: #2d3038;
+        color: #2d3038; 
     }
 
     .service .condition {
@@ -104,29 +60,16 @@
     }
 
     .servive .readmore {
-        border: 1px solid lightblue;
-        width: 100%;
-        background-color: white;
-        font-size: 1em;
-
+    border: 1px solid lightblue;
+    width: 100%;
+    background-color: white;
+    font-size: 1em;
+    
     }
-
+    
     .service .readmore:hover {
-        background-color: transparent;
+    background-color: #ccc;
     }
-
-    .subwhyrealista {
-        max-width: 250px;
-        display: table;
-        margin: 0 auto;
-
-    }
-
-    .col {
-        text-align: center;
-        align-content: center;
-    }
-
 
     p {
         text-align: center;
@@ -138,7 +81,6 @@
 
     h3 {
         text-align: center;
-        color: #2d3038;
     }
 
     h6 {
@@ -148,90 +90,89 @@
     h1 {
         color: #8ea3b3;
         text-align: center;
-
     }
 
     .picture {
 
-        max-width: 500;
-        max-height: 280;
-        max-width: fit-content;
-    }
+max-width: 500;
+max-height: 280;
+max-width: fit-content;
+}
 
-    .dot {
-        background-color: #ffffff;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: inline-block;
-    }
+.dot {
+background-color: #ffffff;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+display: inline-block;
+}
 
-    .button{
-        background-color: transparent;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        font-family: Open Sans, sans-serif;
-        margin-right: 100px;
+.button{
+background-color: transparent;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+font-family: Open Sans, sans-serif;
+margin-right: 100px;
 
-    }
+}
 
-    .button:hover{
-        background-color: transparent;
-        color: white;
-    }
+.button:hover{
+background-color: transparent;
+color: white;
+}
 
-    .dropbtn {
-        background-color: transparent;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        font-family: Open Sans, sans-serif;
-        margin-right: 100px;
-        
+.dropbtn {
+background-color: transparent;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+font-family: Open Sans, sans-serif;
+margin-right: 100px;
 
-    }
 
-    .dropdown {
-        position: relative;
-        display: inline-block;
-        float: unset;
-        left: 60%;
-    }
+}
 
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
+.dropdown {
+position: relative;
+display: inline-block;
+float: unset;
+left: 60%;
+}
 
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
 
-    .dropdown-content a:hover {
-        background-color: #ddd;
-    }
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+.dropdown-content a:hover {
+background-color: #ddd;
+}
 
-    .dropdown:hover .dropbtn {
-        background-color: transparent;
-    }
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: transparent;
+}
+
 </style>
 
-
-
+{% block main %}
 
 <header>
     <div class="upb_row_bg vcpb-default" data-upb_br_animation="" data-parallax_sense="30" data-bg-override="full"
@@ -240,25 +181,7 @@
         <div class="upb_bg_overlay" style="background-color:rgba(24,27,36,0.2);"></div>
     </div>
 
-    <a href="/"><img id="logotipo"
-            src="https://www.realista.io/wp-content/uploads/2020/06/78ed3e5c-557c-42f8-a679-2.png"></a>
-
-    
-        <a href="/" class="button" style="left:67%">HOME</a>
-    
-
-
-
-    <div class="dropdown">
-        <button class="dropbtn">SERVICES</button>
-        <div class="dropdown-content">
-            <a href="/matterport">MATTERPORT VIRTUAL TOUR</a>
-            <a href="/3d-modeling">3D ANIMATION VIDEO</a>
-            <a href="/interior-virtual-deco">3D INTERIOR MODEL</a>
-            <a href="/exterior-virtual-deco">3D EXTERIOR MODEL</a>
-        </div>
-    </div>
-
+    <a href="/"><img id="logotipo" src="images/logo.png"></a>
 
     <div style="top: 50px; left: 470px; z-index:1; text-align:center;">
         <h1 style="position: relative; "> DIGITIZE YOUR SPACE WITH</h1>
@@ -282,64 +205,61 @@
 
     </div>
 
-    <div class="container" style="text-align:center; padding:5%">
-        <a href="/#main" class="btn btn-primary"
-            style="position:relative;color: white; background-color:transparent; border-color:white; border-radius: 50px; width: 250px">Learn
-            More</a>
-    </div>
-
 </header>
 
-
-
-<div class="main" id="main">
-    <h1 style="color:#2d3038;">SERVICES</h1>
-    <hr
-        style="width: 150px;border-style: solid; border-bottom-width: 3px; border-color: rgb(142, 163, 179); left: 50%;">
-
-    <a href="/matterport">
+<div class="main">
+    <h6>CATALOGUE</h6>
+    <h3>OUR SERVICES</h3>
+    <p>When you know what you want, get in touch with us through the form. Prices without Taxes.</p>
+    <a href="/matterport">   
         <div class="service">
-            <img class="picture"
-                src="https://www.realista.io/wp-content/uploads/2020/04/5bb7d4d382df354ff7b33f9e_Matterport-Virtual-Tours-UK-1-e1587659201915.jpg"
-                alt="Matterport Virtual Tour" src="/matterport" />
+            <img class="picture" src="images/Matterport.png" alt="author" />
             <div class="content">
-                <h2 class="name">Matterport Virtual Tour </h2>
+                <h2 class="name">MATTERPORT VIRTUAL TOUR</h2>
+                <div class="price">From 99,00€</div>
+                <div class="time">5 DAYS</div>
+                <div class="condition">Existing Space</div>
+                <div class="readmore">Read More</a></div>
             </div>
         </div>
     </a>
-
     <a href="/3d-modeling">
         <div class="service">
-            <img class="picture" src="https://www.realista.io/wp-content/uploads/2020/04/video-e1587715615732.jpg"
-                alt="author" src="/3d-modeling" />
+            <img class="picture" src="images/3dModeling.png" alt="author" />
             <div class="content">
-                <h2 class="name">3D Animation Video</h2>
+                <h2 class="name">3D MODELING</h2>
+                <div class="price">450,00€</div>
+                <div class="time">12 DAYS</div>
+                <div class="condition">New Space</div>
+                <div class="readmore">Read More</div>
             </div>
         </div>
     </a>
-
     <a href="/interior-virtual-deco">
         <div class="service">
-            <img class="picture" src="https://www.realista.io/wp-content/uploads/2020/05/modelo-3d-interior.jpg"
-                alt="3D Interior Model" src="/interior-virtual-deco" />
+            <img class="picture" src="images/Interior.png" alt="author" />
             <div class="content">
-                <h2 class="name">3D Interior Model</h2>
+                <h2 class="name">INTERIOR VIRTUAL DECORATION</h2>
+                <div class="price">45,00€</div>
+                <div class="time">12 DAYS</div>
+                <div class="condition">New or Existing Space</div>
+                <div class="readmore">Read More</a></div>
             </div>
         </div>
     </a>
-
     <a href="/exterior-virtual-deco">
         <div class="service">
-            <img class="picture"
-                src="https://www.realista.io/wp-content/uploads/2020/04/3D-EXTERIOR-MODELING-e1587715444724.jpg"
-                alt="author" src="exterior-virtual-deco" />
+            <img class="picture" src="images/Exterior.png" alt="author" />
             <div class="content">
-                <h2 class="name">Exterior 3D Model</h2>
+                <h2 class="name">EXTERIOR VIRTUAL DECORATION</h2>
+                <div class="price">99,00€</div>
+                <div class="time">3 DAYS</div>
+                <div class="condition">Existing Space</div>
+                <div class="readmore">Read More</div>
             </div>
         </div>
     </a>
 </div>
-
 
 <div class="whyrealista">
     <div class="container mx-0" style="background-color: rgb(198, 198, 198, 0.33); max-width:100%; height: 365px">
@@ -404,6 +324,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}
